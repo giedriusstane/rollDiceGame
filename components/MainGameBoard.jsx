@@ -2,12 +2,15 @@ import React from "react";
 import Cell from "./Cell";
 import Dice from "./Dice";
 import RollDiceBtn from "./RollDiceBtn";
+import PlayerFigure from "./PlayerFigure";
+import StartCell from "./StartCell";
 
 const MainGameBoard = () => {
   return (
     <div className="main-game-board">
+      <PlayerFigure />
       <div className="box-1">
-        <Cell />
+        <StartCell />
         <Cell />
         <Cell />
         <Cell />
