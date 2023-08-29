@@ -10,9 +10,16 @@ const BoughtStreetsCards = () => {
     <div>
       <div className="money">Money: ${moneyAmountData}</div>
       <div className="bought-streets-cards">
-        {/* {boughtStreetsData.map((street) => (
-          <div>{street.streetColor}</div>
-        ))} */}
+        {boughtStreetsData.map((street, index) => (
+          <div
+            className="bought-street-box"
+            key={index}
+            style={{ backgroundColor: street.streetColor }}
+          >
+            <div>${street.streetPrice}</div>
+            <button>Sell</button>
+          </div>
+        ))}
       </div>
     </div>
   );

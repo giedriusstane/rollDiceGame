@@ -8,6 +8,26 @@ import { useSelector } from "react-redux";
 const MainGameBoard = () => {
   const playerOnCellData = useSelector((state) => state.game.playerOnCell);
 
+  const cellData = [
+    { id: "c-0", price: 150, bgColor: "#f44336" },
+    { id: "c-1", price: 200, bgColor: "#e81e63" },
+    { id: "c-2", price: 45, bgColor: "#9c27b0" },
+    { id: "c-3", price: 30, bgColor: "#673ab7" },
+    { id: "c-4", price: 80, bgColor: "#CDB4DB" },
+    { id: "c-5", price: 1000, bgColor: "#3f51b5" },
+    { id: "c-6", price: 400, bgColor: "#2196f3" },
+    { id: "c-7", price: 85, bgColor: "#03a9f4" },
+    { id: "c-8", price: 50, bgColor: "#CDB4DB" },
+    { id: "c-9", price: 20, bgColor: "#CDB4DB" },
+    { id: "c-10", price: 150, bgColor: "#CDB4DB" },
+    { id: "c-11", price: 250, bgColor: "#CDB4DB" },
+    { id: "c-12", price: 300, bgColor: "#CDB4DB" },
+    { id: "c-13", price: 450, bgColor: "#CDB4DB" },
+    { id: "c-14", price: 800, bgColor: "#CDB4DB" },
+    { id: "c-15", price: 2000, bgColor: "#CDB4DB" },
+    { id: "c-16", price: 75, bgColor: "#CDB4DB" },
+  ];
+
   return (
     <div className="main-game-board">
       <div className="box-1">

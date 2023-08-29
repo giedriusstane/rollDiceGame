@@ -33,7 +33,7 @@ export const gameSlice = createSlice({
     },
 
     updateBoughtStreets: (state, action) => {
-      state.boughtStreets = action.payload;
+      state.boughtStreets.push(action.payload);
     },
   },
 });
@@ -43,6 +43,6 @@ export const {
   updateDiceNumber,
   updatePlayerOnCell,
   updateMoneyAmount,
-  updateBoughtStreets
+  updateBoughtStreets,
 } = gameSlice.actions;
 export default gameSlice.reducer;
