@@ -12,9 +12,13 @@ const Cell = ({ id, opacityPlayer, price, bgColor }) => {
     if (opacityPlayer === 1 && moneyAmountData >= price) {
       dispatch(updateMoneyAmount(moneyAmountData - price));
       dispatch(
-        updateBoughtStreets({ streetPrice: price, streetColor: bgColor })
+        updateBoughtStreets({
+          streetId: id,
+          streetPrice: price,
+          streetColor: bgColor,
+        })
       );
-      console.log("sold");
+      console.log("bought");
     }
   };
 
@@ -22,6 +26,7 @@ const Cell = ({ id, opacityPlayer, price, bgColor }) => {
     <div className="cell" id={id} style={{ backgroundColor: bgColor }}>
       <PlayerFigure opacityValue={opacityPlayer} />
       <div className="cell-price">Price: ${price}</div>
+
       <button onClick={handleBuyClick} className="btn-cell-buy">
         Buy
       </button>
