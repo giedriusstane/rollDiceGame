@@ -1,11 +1,30 @@
 import React from "react";
+import PlayerFigure from "./PlayerFigure";
+import { useDispatch, useSelector } from "react-redux";
+import { updateMoneyAmount } from "../features/game";
+import { updateBoughtStreets } from "../features/game";
 
-const Cell = () => {
+const Cell = ({ id, opacityPlayer, price, bgColor }) => {
+  const moneyAmountData = useSelector((state) => state.game.moneyAmount);
+  const dispatch = useDispatch();
+
+  const handleBuyClick = () => {
+    if (opacityPlayer === 1 && moneyAmountData >= price) {
+      dispatch(updateMoneyAmount(moneyAmountData - price));
+      dispatch(
+        updateBoughtStreets({ streetPrice: price, streetColor: bgColor })
+      );
+      console.log("sold");
+    }
+  };
+
   return (
-    <div className="cell">
-      <div className="cell-color-box"></div>
-      <div className="cell-price">Price: $20</div>
-      <button className="btn-cell-buy">Buy</button>
+    <div className="cell" id={id} style={{ backgroundColor: bgColor }}>
+      <PlayerFigure opacityValue={opacityPlayer} />
+      <div className="cell-price">Price: ${price}</div>
+      <button onClick={handleBuyClick} className="btn-cell-buy">
+        Buy
+      </button>
     </div>
   );
 };

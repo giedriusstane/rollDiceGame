@@ -1,7 +1,7 @@
-import React from "react";
-
-const PlayerFigure = () => {
-  return <div className="player-figure"></div>;
+const PlayerFigure = ({ opacityValue }) => {
+  return (
+    <div className="player-figure" style={{ opacity: opacityValue }}></div>
+  );
 };
 
 export default PlayerFigure;
