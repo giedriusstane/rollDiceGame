@@ -13,6 +13,7 @@ const Dice = () => {
     6: "https://upload.wikimedia.org/wikipedia/commons/2/26/Dice-6-b.svg",
   };
 
+  
   const imgSrc =
     diceImgMap[diceNumberData] ||
     "https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg";

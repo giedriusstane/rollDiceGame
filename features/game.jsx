@@ -24,9 +24,10 @@ export const gameSlice = createSlice({
 
     updatePlayerOnCell: (state, action) => {
       state.playerOnCell = action.payload;
-      if (state.playerOnCell > 17) {
-        state.playerOnCell = state.playerOnCell - 18;
-      }
+      // if (state.playerOnCell > 17) {
+      //   state.playerOnCell = state.playerOnCell - 18;
+
+      // }
     },
 
     updateMoneyAmount: (state, action) => {

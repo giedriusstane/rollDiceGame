@@ -36,8 +36,10 @@ const BoughtStreetsCards = () => {
             id={street.streetId}
             style={{ backgroundColor: street.streetColor }}
           >
-            <div>${street.streetPrice}</div>
-            <button onClick={handleSellBtnClick}>Sell</button>
+            <div className="cell-price">${street.streetPrice / 2}</div>
+            <button className="btn-cell-sell" onClick={handleSellBtnClick}>
+              Sell
+            </button>
           </div>
         ))}
       </div>

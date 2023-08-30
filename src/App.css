@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 
+.main-container {
+  background-color: #4c5355;
+  height: 100vh;
+}
+
 .start-game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 100px;
-  margin-top: 150px;
+  padding-top: 150px;
 }
 
 .figures-box {
@@ -17,16 +22,31 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  border: 1px solid black;
+  box-shadow: 0 0 15px 3px rgba(49, 49, 49, 0.5);
   width: 660px;
   height: 200px;
+  background-color: #cbcdcb;
+  border-radius: 5px;
 }
 
 .figure {
-  border: 1px solid black;
+  box-shadow: 1px 1px 5px 2px rgba(94, 94, 94, 0.3);
   object-fit: cover;
   width: 120px;
   height: 100px;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in;
+  border-radius: 5px;
+}
+
+.figure:hover {
+  transform: scale(1.12);
+}
+
+.figure-selected {
+  border: 5px solid #c44b4f;
+  transform: scale(1.12);
 }
 
 .btn-start-game {
@@ -35,20 +55,31 @@
   width: 250px;
   height: 50px;
   cursor: pointer;
+  background-color: #607d86;
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition-duration: 0.2s;
+  box-shadow: 0 0 15px 3px rgba(49, 49, 49, 0.25);
+  border-radius: 5px;
+}
+
+.btn-start-game:hover {
+  background-color: #0e5469;
 }
 
 .main-game-board {
-  border: 1px solid black;
+  box-shadow: 1px 1px 10px 2px rgba(144, 144, 144, 0.3);
   min-width: 1050px;
   height: 600px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 150px 150px 150px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(187, 240, 220);
 }
 
 .main-game-board .box-1 {
-  /* background-color: green; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +88,6 @@
 }
 
 .main-game-board .box-2 {
-  /* background-color: yellowgreen; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +98,6 @@
 }
 
 .main-game-board .box-3 {
-  /* background-color: rgb(120, 120, 190); */
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -79,7 +108,6 @@
 }
 
 .main-game-board .box-4 {
-  /* background-color: rgb(190, 120, 156); */
   grid-column: 1 / 8;
   grid-row: 4 / 5;
   display: flex;
@@ -117,6 +145,7 @@
   gap: 10px;
   align-items: center;
   padding: 10px;
+  overflow-y: auto;
 }
 
 .game-page-container {
@@ -134,19 +163,29 @@
   gap: 50px;
   width: 120px;
   height: 120px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 2px rgba(144, 144, 144, 0.4);
 }
 
-.cell-color-box {
-  width: 70px;
-  height: 30px;
-  border: 1px solid black;
-  background-color: rgb(191, 91, 91);
+.btn-cell-buy {
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(252, 246, 223);
+  box-shadow: 1px 1px 5px 2px rgba(144, 144, 144, 0.4);
+  padding: 1px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition-duration: 0.2s;
+}
+
+.btn-cell-buy:hover {
+  background-color: rgb(255, 255, 255);
 }
 
 .dice {
   width: 200px;
   height: 200px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(187, 240, 220);
   object-fit: cover;
   width: 150px;
   height: 150px;
@@ -157,6 +196,12 @@
   height: 80px;
   border: none;
   text-transform: uppercase;
+  border: none;
+  font-size: 28px;
+  border-radius: 5px;
+  background-color: #363636;
+  color: white;
+  cursor: pointer;
 }
 
 .player-figure {
@@ -172,8 +217,10 @@
 
 .start-cell {
   text-transform: uppercase;
-  font-size: 17px;
-  box-shadow: 1px 1px 5px 2px rgba(213, 213, 213, 0.363);
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border: 3px solid #c44b4f;
 }
 
 .money {
@@ -208,8 +255,25 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
+  border-radius: 5px;
+}
+
+.btn-cell-sell {
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(252, 246, 223);
+  box-shadow: 1px 1px 5px 2px rgba(144, 144, 144, 0.4);
+  padding: 1px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition-duration: 0.2s;
+  width: 60px;
+}
+
+.btn-cell-sell:hover {
+  background-color: rgb(255, 255, 255);
 }

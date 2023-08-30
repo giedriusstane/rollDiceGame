@@ -14,7 +14,7 @@ const Cell = ({ id, opacityPlayer, price, bgColor }) => {
   );
 
   if (isStreetBought) {
-    bgColor = "grey";
+    bgColor = "#CBCDCB";
   }
 
   const handleBuyClick = () => {
