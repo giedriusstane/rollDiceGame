@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-.main-container {
-  background-color: #4c5355;
+body {
+  background: linear-gradient(to bottom, #1e2020 0%, #4c5355 100%);
   height: 100vh;
 }
 
@@ -70,13 +70,12 @@
 }
 
 .main-game-board {
-  box-shadow: 1px 1px 10px 2px rgba(144, 144, 144, 0.3);
   min-width: 1050px;
   height: 600px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 150px 150px 150px;
-  background-color: rgb(187, 240, 220);
+  background-color: rgb(205, 222, 198);
 }
 
 .main-game-board .box-1 {
@@ -137,8 +136,7 @@
 }
 
 .bought-streets-cards {
-  border: 1px solid black;
-  width: 150px;
+  width: 160px;
   height: 557px;
   display: flex;
   flex-direction: column;
@@ -146,6 +144,7 @@
   align-items: center;
   padding: 10px;
   overflow-y: auto;
+  background-color: rgb(205, 222, 198);
 }
 
 .game-page-container {
@@ -185,7 +184,7 @@
 .dice {
   width: 200px;
   height: 200px;
-  background-color: rgb(187, 240, 220);
+  background-color: rgb(205, 222, 198);
   object-fit: cover;
   width: 150px;
   height: 150px;
@@ -202,6 +201,12 @@
   background-color: #363636;
   color: white;
   cursor: pointer;
+  transition-duration: 0.2s;
+  box-shadow: 1px 1px 5px 2px rgba(144, 144, 144, 0.4);
+}
+
+.btn-roll-dice:hover {
+  background-color: #1b1b1b;
 }
 
 .player-figure {
@@ -224,10 +229,15 @@
 }
 
 .money {
-  border: 1px solid black;
+  box-shadow: 1px 1px 10px 2px rgba(144, 144, 144, 0.3);
   font-size: 18px;
   padding: 5px;
   margin-bottom: 10px;
+  background-color: rgb(205, 222, 198);
+  color: rgb(0, 0, 0);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .cell-price {
@@ -260,6 +270,7 @@
   font-weight: bold;
   letter-spacing: 2px;
   border-radius: 5px;
+  box-shadow: 1px 1px 5px 2px rgba(144, 144, 144, 0.4);
 }
 
 .btn-cell-sell {

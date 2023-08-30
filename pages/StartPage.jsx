@@ -4,13 +4,11 @@ import FigureSelector from "../components/FigureSelector";
 
 const StartPage = () => {
   return (
-    <div className="main-container">
-      <div className="start-game-container">
-        <FigureSelector />
-        <Link to={"/game"}>
-          <button className="btn-start-game">Start Game</button>
-        </Link>
-      </div>
+    <div className="start-game-container">
+      <FigureSelector />
+      <Link to={"/game"}>
+        <button className="btn-start-game">Start Game</button>
+      </Link>
     </div>
   );
 };
