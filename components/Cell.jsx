@@ -27,7 +27,6 @@ const Cell = ({ id, opacityPlayer, price, bgColor }) => {
           streetColor: bgColor,
         })
       );
-      console.log("bought");
     }
   };
 

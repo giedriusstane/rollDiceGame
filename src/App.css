@@ -76,6 +76,7 @@ body {
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 150px 150px 150px;
   background-color: rgb(205, 222, 198);
+  border-radius: 5px;
 }
 
 .main-game-board .box-1 {
@@ -145,13 +146,14 @@ body {
   padding: 10px;
   overflow-y: auto;
   background-color: rgb(205, 222, 198);
+  border-radius: 5px;
 }
 
 .game-page-container {
   display: flex;
   justify-content: center;
   margin-top: 100px;
-  gap: 25px;
+  gap: 10px;
 }
 
 .cell {
@@ -238,6 +240,7 @@ body {
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
   font-weight: bold;
   letter-spacing: 2px;
+  border-radius: 5px;
 }
 
 .cell-price {
