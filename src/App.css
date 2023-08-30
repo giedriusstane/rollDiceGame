@@ -131,7 +131,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  gap: 15px;
+  gap: 50px;
   width: 120px;
   height: 120px;
 }
@@ -160,13 +160,14 @@
 }
 
 .player-figure {
-  width: 40px;
-  height: 40px;
+  object-fit: cover;
+  width: 53px;
+  height: 53px;
   border-radius: 100%;
-  background-color: red;
-  border: 5px solid black;
+  border: 2px solid rgb(255, 255, 255);
   position: absolute;
   transition-duration: 1s;
+  box-shadow: 1px 1px 5px 5px rgba(65, 65, 65, 0.321);
 }
 
 .start-cell {
@@ -183,9 +184,23 @@
 }
 
 .cell-price {
-  color: white;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
   font-weight: bold;
   letter-spacing: 2px;
+}
+
+.cell-sold {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 26px;
+}
+
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 .bought-street-box {

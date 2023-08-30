@@ -1,10 +1,29 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeBoughtStreets } from "../features/game";
+import { updateMoneyAmount } from "../features/game";
 
 const BoughtStreetsCards = () => {
   const moneyAmountData = useSelector((state) => state.game.moneyAmount);
   const boughtStreetsData = useSelector((state) => state.game.boughtStreets);
-  console.log(boughtStreetsData);
+
+  const dispatch = useDispatch();
+
+  const handleSellBtnClick = (e) => {
+    const streetIdToRemove = e.currentTarget.parentElement.id;
+
+    const newBoughtStreets = boughtStreetsData.filter(
+      (street) => street.streetId !== streetIdToRemove
+    );
+
+    const soldStreet = boughtStreetsData.find(
+      (street) => street.streetId === streetIdToRemove
+    );
+    const soldStreetPrice = soldStreet ? soldStreet.streetPrice : 0;
+
+    dispatch(removeBoughtStreets(newBoughtStreets));
+    dispatch(updateMoneyAmount(moneyAmountData + soldStreetPrice / 2));
+  };
 
   return (
     <div>
@@ -14,10 +33,11 @@ const BoughtStreetsCards = () => {
           <div
             className="bought-street-box"
             key={index}
+            id={street.streetId}
             style={{ backgroundColor: street.streetColor }}
           >
             <div>${street.streetPrice}</div>
-            <button>Sell</button>
+            <button onClick={handleSellBtnClick}>Sell</button>
           </div>
         ))}
       </div>

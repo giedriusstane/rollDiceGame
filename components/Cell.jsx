@@ -6,7 +6,16 @@ import { updateBoughtStreets } from "../features/game";
 
 const Cell = ({ id, opacityPlayer, price, bgColor }) => {
   const moneyAmountData = useSelector((state) => state.game.moneyAmount);
+  const boughtStreetsData = useSelector((state) => state.game.boughtStreets);
   const dispatch = useDispatch();
+
+  const isStreetBought = boughtStreetsData.some(
+    (street) => street.streetId === id
+  );
+
+  if (isStreetBought) {
+    bgColor = "grey";
+  }
 
   const handleBuyClick = () => {
     if (opacityPlayer === 1 && moneyAmountData >= price) {
@@ -25,11 +34,17 @@ const Cell = ({ id, opacityPlayer, price, bgColor }) => {
   return (
     <div className="cell" id={id} style={{ backgroundColor: bgColor }}>
       <PlayerFigure opacityValue={opacityPlayer} />
-      <div className="cell-price">Price: ${price}</div>
 
-      <button onClick={handleBuyClick} className="btn-cell-buy">
-        Buy
-      </button>
+      {isStreetBought && <div className="cell-sold">SOLD</div>}
+
+      {!isStreetBought && (
+        <div className="cell-content">
+          <div className="cell-price">Price: ${price}</div>
+          <button onClick={handleBuyClick} className="btn-cell-buy">
+            Buy
+          </button>
+        </div>
+      )}
     </div>
   );
 };

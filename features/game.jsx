@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  selectedFigure: "",
+  selectedFigure:
+    "https://i.pinimg.com/originals/76/7b/90/767b90683f1100ae7879be71bfb80193.jpg",
   diceNumber: 0,
   playerOnCell: 0,
   moneyAmount: 100,
@@ -35,6 +36,10 @@ export const gameSlice = createSlice({
     updateBoughtStreets: (state, action) => {
       state.boughtStreets.push(action.payload);
     },
+
+    removeBoughtStreets: (state, action) => {
+      state.boughtStreets = action.payload;
+    },
   },
 });
 
@@ -44,5 +49,6 @@ export const {
   updatePlayerOnCell,
   updateMoneyAmount,
   updateBoughtStreets,
+  removeBoughtStreets,
 } = gameSlice.actions;
 export default gameSlice.reducer;

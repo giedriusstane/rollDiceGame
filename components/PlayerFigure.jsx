@@ -1,6 +1,14 @@
+import { useSelector } from "react-redux";
+
 const PlayerFigure = ({ opacityValue }) => {
+  const figureImagData = useSelector((state) => state.game.selectedFigure);
+
   return (
-    <div className="player-figure" style={{ opacity: opacityValue }}></div>
+    <img
+      src={figureImagData}
+      className="player-figure"
+      style={{ opacity: opacityValue }}
+    />
   );
 };
 

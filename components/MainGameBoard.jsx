@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 
 const MainGameBoard = () => {
   const playerOnCellData = useSelector((state) => state.game.playerOnCell);
-  const boughtStreetsData = useSelector((state) => state.game.boughtStreets);
-  const isStreetBought = boughtStreetsData.some((street) => street.streetId);
+  
+ 
 
   const cellData = [
     { id: "c-0", price: 150, bgColor: "#f44336" },
